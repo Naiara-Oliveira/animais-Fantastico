@@ -18,8 +18,6 @@ initFuncionamneto();
 initFetchAnimais();
 initBitcoin();
 
-
-<<<<<<< Updated upstream
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 Modal();
@@ -30,7 +28,7 @@ initFuncionamneto();
 initFetchAnimais();
 initBitcoin();
 initAnimacaoScroll();
-=======
+
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
@@ -42,4 +40,4 @@ tabnav.init();
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
 
->>>>>>> Stashed changes
+
