@@ -53,5 +53,4 @@ return this;
     }
     return this;
   }
-}
 >>>>>>> Stashed changes
