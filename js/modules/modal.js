@@ -27,7 +27,6 @@ export default class Modal {
     }
   }
   //adiciona eventos aos elementos do modal
-<<<<<<< Updated upstream
 addModalEventos(){
   this.botaoAbrir.addEventListener('click', this.eventoToggleModal);
   this.botaoFechar.addEventListener('click', this.eventoToggleModal);
@@ -41,16 +40,3 @@ return this;
   }
 }
 
-=======
-  addModalEventos() {
-    this.botaoAbrir.addEventListener('click', this.eventoToggleModal);
-    this.botaoFechar.addEventListener('click', this.eventoToggleModal);
-    this.containerModal.addEventListener('click', this.cliqueForaModal);
-  }
-  init() {
-    if (this.botaoAbrir && this.botaoFechar && this.containerModal) {
-      this.addModalEventos();
-    }
-    return this;
-  }
->>>>>>> Stashed changes
