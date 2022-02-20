@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _debounce = _interopRequireDefault(require("./debounce.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -19,7 +23,7 @@ function () {
 
     this.section = document.querySelector(section);
     this.windowMetade = window.innerHeight * 0.6;
-    this["this"].checkDistancia = this.checkDistancia.bind(this);
+    this["this"].checkDistancia = (0, _debounce["default"])(this.checkDistancia.bind(this), 200);
   } //pega a distancia de cada item em relacao ao topo do site
 
 

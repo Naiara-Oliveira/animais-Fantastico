@@ -1,8 +1,9 @@
+import debounce from "./debounce.js";
 export default class AnimacaoScroll {
   constructor(section) {
     this.section = document.querySelector(section);
     this.windowMetade = window.innerHeight * 0.6;
-    this.this.checkDistancia = this.checkDistancia.bind(this);
+    this.this.checkDistancia = debounce(this.checkDistancia.bind(this), 200);
   }
   //pega a distancia de cada item em relacao ao topo do site
   getDistancia() {
