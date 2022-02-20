@@ -13,7 +13,7 @@ import initAnimacaoScroll from './modules/scroll-animacao.js';
 initDropDownmenu();
 initmenuMobile();
 fetchBitcoin('http://blockchain.info/ticker' , '.btc-preco');
-initAnimacaoScroll();
+AnimacaoScroll();
 initFuncionamneto();
 fetchAnimais('../animaisapi.json', '.numeros-grid');
 initBitcoin();
@@ -21,12 +21,14 @@ initBitcoin();
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 
+const scrollAnima = new AnimacaoScroll('[data-anime="scroll"]');
+scrollAnima.init();
 Tooltip();
 initDropDownmenu();
 initmenuMobile();
 initFuncionamneto();
 initBitcoin();
-initAnimacaoScroll();
+
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
