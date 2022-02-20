@@ -19,30 +19,51 @@ function () {
 
     this.section = document.querySelector(section);
     this.windowMetade = window.innerHeight * 0.6;
-    this["this"].animaScroll = tgis["this"].animaScroll.bind(this);
-  }
+    this["this"].checkDistancia = this.checkDistancia.bind(this);
+  } //pega a distancia de cada item em relacao ao topo do site
+
 
   _createClass(AnimacaoScroll, [{
-    key: "animaScroll",
-    value: function animaScroll() {
+    key: "getDistancia",
+    value: function getDistancia() {
       var _this = this;
 
-      sections.forEach(function (section) {
-        var sectionTop = section.getBoundingClientRect().top;
-        var isSectionVisible = sectionTop - _this.windowMetade < 0;
+      this.distancia = [this.section].map.forEach(function (section) {
+        var offeset = section.offesetTop;
+        return {
+          Element: section,
+          offeset: Math.floor(offeset - _this.windowMetade)
+        };
+      });
+    } //verifica a distancia em cada objeto em relacao ao scroll do site
 
-        if (isSectionVisible) {
-          section.classList.add('ativo');
+  }, {
+    key: "checkDistancia",
+    value: function checkDistancia() {
+      this.distancia.forEach(function (item) {
+        if (window.pageYOffset > item.offeset) {
+          item.element.classList.add('ativo');
         } else if (section.classList.contains('ativo')) {
-          _this.section.classList.remove('ativo');
+          item.element.classList.remove('ativo');
         }
       });
     }
   }, {
     key: "init",
     value: function init() {
-      this.animaScroll();
-      window.addEventListener('scroll', this.animaScroll);
+      if (this.sections.length) {
+        this.getDistancia();
+        this.checkDistancia();
+        window.addEventListener('scroll', this.checkDistancia);
+      }
+
+      return this;
+    } //remove o evento de scroll
+
+  }, {
+    key: "destruitAnimacaoScroll",
+    value: function destruitAnimacaoScroll() {
+      window.removeEventListener('scroll', this.checkDistancia);
     }
   }]);
 
