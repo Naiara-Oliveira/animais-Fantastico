@@ -7,12 +7,12 @@ import initDropDownmenu from './modules/dropdown-menu.js';
 import initmenuMobile from './modules/menu-mobile.js';
 import initFuncionamneto from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
-import initBitcoin from './modules/fetch-bitcoin.js';
+import fetchBitcoin from './modules/fetch-bitcoin.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 
 initDropDownmenu();
 initmenuMobile();
-initBitcoin();
+fetchBitcoin('http://blockchain.info/ticker' , '.btc-preco');
 initAnimacaoScroll();
 initFuncionamneto();
 fetchAnimais('../animaisapi.json', '.numeros-grid');
