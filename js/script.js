@@ -3,30 +3,16 @@ import Accordion from './modules/accordion.js';
 import TabNav from './modules/tab-nav.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
-import initDropDownmenu from './modules/dropdown-menu.js';
-import initmenuMobile from './modules/menu-mobile.js';
+import DropdownMenu from './modules/dropdown-menu.js';
+import MenuMobile from './modules/menu-mobile.js';
 import initFuncionamneto from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
+import AnimacaoScroll from './modules/scroll-animacao.js';
 
-initmenuMobile();
-fetchBitcoin('http://blockchain.info/ticker' , '.btc-preco');
-AnimacaoScroll();
-initFuncionamneto();
-fetchAnimais('../animaisapi.json', '.numeros-grid');
-initBitcoin();
 
-const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
-modal.init();
-
-const scrollAnima = new AnimacaoScroll('[data-anime="scroll"]');
-scrollAnima.init();
 Tooltip();
-initDropDownmenu();
-initmenuMobile();
 initFuncionamneto();
-initBitcoin();
 
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -42,3 +28,15 @@ accordion.init();
 
 const dropdownmenu = DropdownMenu('[data-dropdown]')
 dropdownmenu.init();
+
+const menuMobile = MenuMobile('[data-menu="button"]' , '[data-menu="list"]');
+menuMobile.init();
+fetchBitcoin('http://blockchain.info/ticker' , '.btc-preco');
+initFuncionamneto();
+fetchAnimais('../animaisapi.json', '.numeros-grid');
+
+const scrollAnima = new AnimacaoScroll('[data-anime="scroll"]');
+scrollAnima.init();
+
+const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
+modal.init();
