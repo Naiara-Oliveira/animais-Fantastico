@@ -62,12 +62,12 @@ function () {
       }
 
       return this;
-    } //remove o evento de scroll
+    } // Remove o event de scroll
 
   }, {
-    key: "destruitAnimacaoScroll",
-    value: function destruitAnimacaoScroll() {
-      window.removeEventListener('scroll', this.checkDistancia);
+    key: "stop",
+    value: function stop() {
+      window.removeEventListener('scroll', this.checkDistance);
     }
   }]);
 

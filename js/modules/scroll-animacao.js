@@ -25,17 +25,19 @@ export default class AnimacaoScroll {
       }
     });
   }
-  
-  init() {
-    if(this.sections.length){
-    this.getDistancia();
-    this.checkDistancia();
-    window.addEventListener('scroll', this.checkDistancia);
-  }
+
+
+init() {
+  if(this.sections.length){
+  this.getDistancia();
+  this.checkDistancia();
+  window.addEventListener('scroll', this.checkDistancia);
+}
 return this;
 }
-//remove o evento de scroll
-destruitAnimacaoScroll(){
-  window.removeEventListener('scroll', this.checkDistancia);
-}
+// Remove o event de scroll
+  stop() {
+    window.removeEventListener('scroll', this.checkDistance);
+  }
+
 }
