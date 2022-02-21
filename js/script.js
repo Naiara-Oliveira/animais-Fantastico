@@ -30,7 +30,7 @@ const menuMobile = MenuMobile('[data-menu="button"]' , '[data-menu="list"]');
 menuMobile.init();
 fetchBitcoin('http://blockchain.info/ticker' , '.btc-preco');
 initFuncionamneto();
-fetchAnimais('../animaisapi.json', '.numeros-grid');
+fetchAnimais('./animaisapi.json', '.numeros-grid');
 
 const scrollAnima = new AnimacaoScroll('[data-anime="scroll"]');
 scrollAnima.init();
