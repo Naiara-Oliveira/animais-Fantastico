@@ -1,16 +1,38 @@
-export default function initFuncionamneto() {
-  const funcionamento = document.querySelector('[data-semana]');
-  const diaSemanas = funcionamento.dataset.semana.split(',').map(Number);
-  const horarioSemanas = funcionamento.dataset.horario.split(',').map(Number);
+export default class Funcionamento {
+  constructor(funcionamento, activeClass) {
 
-  const dataAgora = new Date();
-  const diaAagora = dataAgora.getDay();
-  const horarioAgora = dataAgora.getHours();
-
-  const semanaAberta = diaSemanas.indexOf(diaAagora) !== -1;
-  const horarioAberto = (horarioAgora >= horarioSemanas[0] && horarioAgora < horarioSemanas[1]);
-
-  if (semanaAberta && horarioAberto) {
-    funcionamento.classList.add('aberto');
+    this.funcionamento = document.querySelector(funcionamento);
+this.activeClass = activeClass;
   }
+  dadosFuncionamento(){
+    this.diaSemanas = this.funcionamento.dataset.semana.split(',').map(Number);
+    this.horarioSemanas = this.funcionamento.dataset.horario.split(',').map(Number);
+  }
+  
+  dadosAgora(){
+    this.dataAgora = new Date();
+    this.diaAagora = dataAgora.getDay();
+    this.horarioAgora = dataAgora.getUTCHours() -3;
+  
+  }
+
+  estarAberto(){
+    const semanaAberta = this.diaSemanas.indexOf(this.diaAagora) !== -1;
+    const horarioAberto = (this.horarioAgora >= this.horarioSemanas[0] && this.horarioAgora < this.horarioSemanas[1]);
+
+  return semanaAberta && horarioAberto;
+  }
+  
+  ativaAberta(){
+    if(this.estarAberto())
+    this.funcionamento.classList.add(activeClass);
+  }
+  init(){
+    if(this.funcionamento){
+      this.dadosFuncionamento();
+      this.dadosAgora();
+    this.ativarAberto();
+  }
+  return this;
+}
 }

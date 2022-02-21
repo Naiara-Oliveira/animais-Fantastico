@@ -5,16 +5,13 @@ import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import MenuMobile from './modules/menu-mobile.js';
-import initFuncionamneto from './modules/funcionamento.js';
+import Funcionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
 import AnimacaoScroll from './modules/scroll-animacao.js';
 
 
 Tooltip();
-initFuncionamneto();
-
-
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
@@ -40,3 +37,6 @@ scrollAnima.init();
 
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
+
+const funcionamento = new Funcionamento('[data-semana]', 'aberto');
+funcionamento.init();
