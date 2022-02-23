@@ -9,6 +9,7 @@ import Funcionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
 import AnimacaoScroll from './modules/scroll-animacao.js';
+import SlideNav from './modules/slide.js';
 
 
 Tooltip();
@@ -40,3 +41,8 @@ modal.init();
 
 const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.init();
+
+const slide = new SlideNav('.slide', '.slide-wrapper');
+slide.init();
+slide.addControle('.custom-control');
+
