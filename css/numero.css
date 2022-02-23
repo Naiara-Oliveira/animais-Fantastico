@@ -5,12 +5,7 @@
    gap: 30px;
 
 }
-@media (max-width: 700px) {
-.numeros-grid{
-   grid-column:1;
-}
 
-}
 .numeros-grid h3{
    font-size: 3rem;
    font-family: "Playfair Dispaly sc";
@@ -24,3 +19,11 @@
    color: #e54;
 
 }
+@media (max-width: 700px) {
+   .numeros-grid{
+      grid-column:1;
+   }
+   .numeros-grid h3{
+      font-size: 1.4rem;
+   }
+   }
